@@ -67,12 +67,16 @@ class GoogleSheetsClient:
                 photo_data = dict(zip(headers, row_extended))
                 
                 # Проверяем обязательные поля
-                if not photo_data.get('path'):
-                    self.logger.warning(f"Пропущена строка без указания пути: {photo_data}")
+                required_fields = ['Путь', 'Широта', 'Долгота']
+                missing_fields = [field for field in required_fields if field not in photo_data or not photo_data[field]]
+                
+                if missing_fields:
+                    self.logger.warning(f"Пропущена строка с отсутствующими полями {', '.join(missing_fields)}: {photo_data}")
                     continue
                     
                 photos_data.append(photo_data)
                 
+            self.logger.info(f"Получено {len(photos_data)} записей из таблицы")
             return photos_data
             
         except Exception as e:

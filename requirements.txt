@@ -1,7 +1,7 @@
 pillow>=9.5.0  # For image processing
 google-api-python-client>=2.108.0  # For Google Sheets API
 google-auth-oauthlib>=1.1.0  # For Google authentication
-exif>=1.6.0  # For EXIF data manipulation
+piexif>=1.1.3  # For EXIF data manipulation
 requests>=2.31.0  # For API requests
 python-dotenv>=1.0.0  # For environment variables
 geopy>=2.4.1  # For geocoding operations

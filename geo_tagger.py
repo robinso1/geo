@@ -1,6 +1,17 @@
-import logging
-import os
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+"""
+Geo Photo Tagger - скрипт для автоматического геотегинга фотографий
+с использованием данных из Google Таблиц.
+
+Автор: robinso1
+Версия: 1.0.0
+"""
+
 import sys
+import os
+import logging
 from src import Config, PhotoProcessor, GoogleSheetsClient
 
 def main():
